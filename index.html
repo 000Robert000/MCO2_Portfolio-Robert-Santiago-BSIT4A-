@@ -238,6 +238,11 @@ mark{background:var(--amb);color:#1a1200;padding:0 2px;border-radius:3px}
 .pg:hover{border-color:var(--neon);box-shadow:0 0 12px #39ff9a55}
 .pg.next{background:var(--neon);color:#04100b;border-color:var(--neon)}
 .pg-dots{font-family:var(--pix);font-size:8px;color:var(--mut)}
+.certgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cb{display:flex;gap:9px;align-items:center;background:var(--pan);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.cb-ic{font-size:18px;width:34px;height:34px;flex:none;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#39ff9a1a}
+.cb.sec .cb-ic{background:#4cc3ff1f}.cb.biz .cb-ic{background:#ffc23d22}
+.cb b{display:block;font-size:12px;color:#fff;line-height:1.3}.cb small{display:block;font-size:10.5px;color:var(--mut)}
 /* responsive */
 @media screen and (max-width:1000px){.map{grid-template-columns:repeat(5,1fr)}.badgewall{grid-template-columns:1fr 1fr}}
 @media screen and (max-width:860px){
@@ -246,7 +251,7 @@ mark{background:var(--amb);color:#1a1200;padding:0 2px;border-radius:3px}
  body.menu .levels{display:block}
  .hud-stat{display:none}.xp{width:110px}
  .cols2,.cols3,.cols-ag,.char,.diff,.shots,.grow,.start-hero,.qgrid{grid-template-columns:1fr}
- .pgrid,.pgrid.two,.rulegrid,.shields,.path,.road,.stats,.invgrid,.map{grid-template-columns:1fr 1fr}
+ .pgrid,.pgrid.two,.rulegrid,.shields,.path,.road,.stats,.invgrid,.map,.certgrid{grid-template-columns:1fr 1fr}
  .timeline{grid-template-columns:repeat(4,1fr)}
  .arch,.formula,.flowline,.anat{flex-direction:column}
  .fl{clip-path:none!important;padding-left:14px}.fm{border-radius:0!important}
@@ -288,7 +293,8 @@ mark{background:var(--amb);color:#1a1200;padding:0 2px;border-radius:3px}
  .char{grid-template-columns:62mm 1fr;gap:14px}.char-card{padding:12px}.frame{width:120px;height:120px}
  .cv-name{font-size:16px}.contact{font-size:9px}.edu{font-size:9.5px}.cert{font-size:9.2px;margin-bottom:4px}
  .bio{font-size:10px}.invgrid{gap:6px}.inv{padding:7px}.slot{font-size:8.6px;padding:1px 5px}
- .qgrid{gap:6px}.qcard{padding:7px 9px}.qcard p{font-size:9.2px}.qc-h b{font-size:10.4px}
+ .certgrid{gap:5px}.cb{padding:4px 7px}.cb-ic{width:24px;height:24px;font-size:13px}.cb b{font-size:8.8px}.cb small{font-size:8px}
+ .qgrid{gap:6px;grid-template-columns:repeat(3,1fr)}.qcard{padding:7px 9px}.qcard p{font-size:9.2px}.qc-h b{font-size:10.4px}
  .shots img{aspect-ratio:16/10}
  .badgewall{gap:5px}.road{margin-top:4px}.ba-r{font-size:8.8px;margin-bottom:3px}.ba-r span{padding:2px 5px}
  h4.sub{margin:9px 0 5px}
@@ -318,7 +324,7 @@ mark{background:var(--amb);color:#1a1200;padding:0 2px;border-radius:3px}
  <div class="player">
   <img src="img/avatar.jpg" alt="Robert Angel B. Santiago">
   <div class="pl-name">Robert Angel B. Santiago</div>
-  <div class="pl-class">Class: BSIT-4A · Web Dev &amp; Applied AI</div>
+  <div class="pl-class">Class: BSIT-4A</div>
   <div class="pl-stats">
    <div><b>32</b><span>prompts logged</span></div><div><b>6</b><span>levels</span></div><div><b>13</b><span>badges</span></div>
   </div>
@@ -333,7 +339,7 @@ mark{background:var(--amb);color:#1a1200;padding:0 2px;border-radius:3px}
  <div class="char-card">
   <div class="frame"><img src="img/avatar.jpg" alt="Robert Angel B. Santiago"></div>
   <h1 class="cv-name">Robert Angel B. Santiago</h1>
-  <div class="cv-role">BS Information Technology · 4th Year<br>Web Development &amp; Applied AI</div>
+  <div class="cv-role">BS Information Technology · 4th Year</div>
   <div class="contact">
    <div>📍 Guagua, Pampanga, PH</div>
    <div>✉️ robertsantiago0827@gmail.com</div>
@@ -343,11 +349,6 @@ mark{background:var(--amb);color:#1a1200;padding:0 2px;border-radius:3px}
   <h3>Origin · Education</h3>
   <div class="edu"><b>BS Information Technology</b><br>Angeles University Foundation<br><span>2023 – Present · Focus: Web &amp; Mobile Dev</span></div>
   <div class="edu"><b>Senior High School: STEM</b><br>St. Mary's Academy of Guagua<br><span>2019 – 2022</span></div>
-  <h3>Badges · Certifications</h3>
-  <div class="cert"><span>🏅</span><div><b>Junior Cybersecurity Analyst Career Path</b><small>Cisco NetAcad · May 2026</small></div></div>
-  <div class="cert"><span>🏅</span><div><b>Cybersecurity Essentials</b><small>Cisco NetAcad · May 2026</small></div></div>
-  <div class="cert"><span>🏅</span><div><b>Discovering Entrepreneurship</b><small>Cisco NetAcad · Nov 2025</small></div></div>
-  <div class="cert"><span>🏅</span><div><b>Introduction to Cybersecurity</b><small>Cisco NetAcad · Oct 2025</small></div></div>
  </div>
  <div class="char-main">
   <div class="tag">PLAYER PROFILE · CURRICULUM VITAE</div>
@@ -360,8 +361,9 @@ mark{background:var(--amb);color:#1a1200;padding:0 2px;border-radius:3px}
    <div class="inv"><b>Databases</b><div class="slots"><span class="slot">MySQL</span><span class="slot">PostgreSQL</span></div></div>
    <div class="inv"><b>AI &amp; Prompting</b><div class="slots"><span class="slot">Prompt frameworks</span><span class="slot">RAG / grounding</span><span class="slot">Guardrails</span><span class="slot">Gemini API</span><span class="slot">Claude Skills</span></div></div>
    <div class="inv"><b>Systems &amp; Tools</b><div class="slots"><span class="slot">Linux CLI</span><span class="slot">Apache</span><span class="slot">Git / GitHub</span><span class="slot">Render</span><span class="slot">VS Code</span><span class="slot">NetBeans</span></div></div>
-   <div class="inv"><b>Side Quests</b><div class="slots"><span class="slot">Reading novels</span><span class="slot">Java game dev</span></div></div>
+   <div class="inv"><b>Side Quests</b><div class="slots"><span class="slot">Reading novels</span><span class="slot">Playing games</span></div></div>
   </div>
+  <h3>Badges · Licenses &amp; Certifications (9)</h3><div class="certgrid"><div class="cb ai"><span class="cb-ic">🤖</span><div><b>Google Generative AI Accelerator Program – Philippines</b><small>SmartBridge Philippines · Nov 2026</small></div></div><div class="cb ai"><span class="cb-ic">🤖</span><div><b>Prompt Design in Vertex AI Skill Badge</b><small>Google Cloud · Nov 2026</small></div></div><div class="cb ai"><span class="cb-ic">🤖</span><div><b>Introduction to Generative AI</b><small>Google · Nov 2026</small></div></div><div class="cb ai"><span class="cb-ic">🤖</span><div><b>Introduction to Large Language Models</b><small>Google · Nov 2026</small></div></div><div class="cb ai"><span class="cb-ic">🤖</span><div><b>Responsible AI: Applying AI Principles with Google Cloud</b><small>Google · Nov 2026</small></div></div><div class="cb sec"><span class="cb-ic">🛡️</span><div><b>Junior Cybersecurity Analyst Career Path</b><small>Cisco Networking Academy · May 2026</small></div></div><div class="cb sec"><span class="cb-ic">🛡️</span><div><b>Cybersecurity Essentials</b><small>Cisco Networking Academy · May 2026</small></div></div><div class="cb sec"><span class="cb-ic">🛡️</span><div><b>Introduction to Cybersecurity</b><small>Cisco Networking Academy · Oct 2025</small></div></div><div class="cb biz"><span class="cb-ic">💼</span><div><b>Discovering Entrepreneurship</b><small>Cisco Networking Academy · Nov 2025</small></div></div></div>
   <h3>Completed Quests · Projects</h3>
   <div class="qgrid"><div class="qcard"><div class="qc-h"><b>ChitChat: AI Customer-Support Assistant</b><span>Final Project · 2026</span></div><div><span class="chip xs">Node.js</span><span class="chip xs">Express</span><span class="chip xs">Gemini API</span><span class="chip xs">BM25</span><span class="chip xs">SSE</span></div><p>Built a 24/7 assistant for ESE-TECH Industrial Solutions that answers only from an 82-section knowledge base, in English and Filipino. Added rate limiting, input validation, a CORS allowlist and server-side API keys.</p></div><div class="qcard"><div class="qc-h"><b>CareerSense: AUF Graduate Tracer Portal</b><span>Capstone Project</span></div><div><span class="chip xs">PHP</span><span class="chip xs">MySQL</span><span class="chip xs">Render</span></div><p>Portal for AUF alumni affairs. Alumni upload a resume, and the system extracts it into the tracer survey so they don&#x27;t have to retype it.</p></div><div class="qcard"><div class="qc-h"><b>ShopSmart: Grounded Product Assistant</b><span>PDC50 · 2026</span></div><div><span class="chip xs">Node.js</span><span class="chip xs">PostgreSQL</span><span class="chip xs">Prisma</span><span class="chip xs">Gemini</span></div><p>Injects live catalog data into the prompt so recommendations use only real items and prices. Includes a fallback search and a security audit that removed an exposed API key.</p></div><div class="qcard"><div class="qc-h"><b>Academic Workspace &amp; Study Agent</b><span>Agentic AI · 2026</span></div><div><span class="chip xs">Claude Skills</span><span class="chip xs">Agent design</span></div><p>Reusable Claude Skill that organizes course files with approval gates and turns lectures into cited study notes.</p></div><div class="qcard"><div class="qc-h"><b>CyberNet News Detection System</b><span>Web · AI</span></div><div><span class="chip xs">PHP</span><span class="chip xs">Text-pattern AI</span></div><p>Lets users submit news links, then flags likely fake articles using automated text-pattern checks.</p></div><div class="qcard"><div class="qc-h"><b>ABCs RFID Attendance Portal</b><span>Hardware + Web</span></div><div><span class="chip xs">PHP</span><span class="chip xs">MySQL</span><span class="chip xs">RFID</span></div><p>A card tap logs the student&#x27;s arrival time and status to the database right away.</p></div></div>
  </div>
